@@ -1,0 +1,228 @@
+{% extends 'updateSystem/base.html'%}
+{% load static %}
+{% block title %}
+Home|C-tech|
+{% endblock %}
+{% block body %}
+<style>
+    .carausel{
+    backdround:black;
+    }
+
+
+    
+</style>
+<div class="carausel">
+<div class="uk-margin-remove-top">
+<div class="uk-position-relative uk-visible-toggle uk-light uk-margin-remove-top" tabindex="-1" uk-slideshow="animation: fade">
+
+    <ul class="uk-slideshow-items uk-margin-remove-top">
+        {%for x in carausel%}
+        <li>
+            <img src="/media/{{x.display_img}}" alt="" uk-cover>
+            <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom uk-visible@l">
+                <p class="uk-margin-remove">{{x.display_name}}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+</div>
+</div>
+</div>
+
+<div class="uk-container" style="margin-top:50px">
+    <h1 style="text-align:center">Our Products</h1>
+
+    <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
+        {% for x in product123 %}
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <a href="/quickview/{{x.product_id}}"><img src="/media/{{x.product_image1}}" alt=""></a>
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title" style="color:black">{{x.product_name}}</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<div class="uk-container" style="margin-top:50px">
+    <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
+        {% for x in product456 %}
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <a href="/quickview/{{x.product_id}}"><img src="/media/{{x.product_image1}}" alt=""></a>
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title" style="color:black">{{x.product_name}}</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<div class="uk-container" style="margin-top:50px">
+    <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
+        {% for x in product789 %}
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <a href="/quickview/{{x.product_id}}"><img src="/media/{{x.product_image1}}" alt=""></a>
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title" style="color:black">{{x.product_name}}</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="{% static 'updateSystem/3617.jpg'%}" uk-img>
+</div>
+
+
+<div class="uk-container" style="margin-top:50px">
+            <h1>Our Valuable Customers</h1>
+<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="sets: true">
+
+
+    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m">
+
+        {% for x in clients%}
+        <li>
+            <img src="/media/{{x.Clients_img}}" alt="">
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div>
+</div>
+
+
+
+
+<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+    <div class="uk-card-media-left uk-cover-container">
+        <img src="{% static 'updateSystem/car.jpeg'%}" alt="" uk-cover>
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">Our Strength</h3>
+            <p>In house Designing & Manufacturing facility for Jigs, Fixtures, Special Gauges, Machine Accessories, Work holding arrangements, Tool holding systems, SPM, HSS cutting tools etc.
+• International approval ISO 9001:2008 from ICS.
+• Strong quality vender support.
+• Backup for C.M.M facility from sister concerns.
+• Advance machinery for total solution for turned components.
+• Export house status from Government of India.
+• In-house Heat Treatment facility for Hardening & Case Carburizing (Seal Quench Furness).
+                We have a complete backup of two tool rooms of our own for design & development of
+• Jigs & Fixtures
+• SPM Special Purpose Machines
+• Cutting Tools
+• Heat Treatment Facility
+• CMM Facility
+• Strong Vendor network
+
+ </p>
+        </div>
+    </div>
+</div>
+
+<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+    <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+        <img src="{% static 'updateSystem/wind.jpeg'%}" alt="" uk-cover>
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">Our Environmental policies</h3>
+            <p>As a leading India based manufacturer of domestic, commercial and industrial heating products, we have made ourselves aware of the consequential impacts our
+                operations have on the environment, including our energy use. This we have done
+                in relation to the resources used within the manufacturing processes and also the energ
+                y used by our products once installed. We recognise the importance of product design in
+                this context and in terms of sustainable development. We continually strive to use renewable
+                materials and energy resources in our design and production processes.
+
+Our commitment to care for the environment and manage our energy use is translated into company policy in the following ways:
+
+ In pursuance of excellent environmental and energy performance through the ongoing development of our formal Environmental and Energy Management System, we will put in place and regularly review appropriate measures to continually improve our performance, including the prevention of pollution incidents.
+
+</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" style="background-image: url('{% static 'updateSystem/parallex.jpeg' %}');">
+    <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+        <h1 uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; viewport: 0.5;">Growth Year and Year and Customer Satisfaction</h1>
+        <p uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; viewport: 0.5;">Focus on: Product Quality & Cost effectiveness with Zero Rejection and To insure Ontime Delivery to be 100%</p>
+    </div>
+</div>
+
+
+<div class="uk-child-width-1-2@s uk-text-center" uk-grid style="margin-top:2vh">
+    <div>
+        <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" style="background-image: url('{% static 'updateSystem/crane.jpeg' %}');">
+    <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+        <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">Vendor Support</h1>
+        <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;"> Heat Treatment
+• Induction Hardening
+• Case Carburizing
+ Surface Treatment
+• Zinc Crome Platting
+• Magneze Phosphating
+ Special Treatment
+• Molykote Coating
+
+ </p>
+    </div>
+</div>
+    </div>
+    <div>
+        <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" style="background-image: url('{% static 'updateSystem/tr.jpeg' %}');">
+    <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+        <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">Achievements</h1>
+        <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">
+Soft Big Machined Bushes, Hardened and Ground Bushes, Precision Machined Components, Manufacturer, Pune, India
+
+ Star Performer Exporter Awards
+
+In 2008-09 Company was awarded a NATIONAL AWARD for Export Excellence from Engineering
+            Export Promotion Counsel for Special Contribution for Highest Exporter of
+            Thrust Markets Small Enterprises.
+
+Awards for Export Excelience 2010-2011 ( i.e. EEPC INDIA Engineering The Future Award )
+ </p>
+    </div>
+</div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+

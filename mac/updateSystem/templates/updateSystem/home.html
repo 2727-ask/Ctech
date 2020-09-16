@@ -1,0 +1,167 @@
+
+
+<h1 style="color:gold;text-align:center">Welcome To C-TECH Engineers Pvt Ltd</h1>
+
+<style>
+*{
+
+  background:#000;
+}
+td{
+text-align:center;
+}
+
+#contain {
+  height: 500px;
+  overflow-y: scroll;
+}
+#table_scroll {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+#table_scroll tbody td {
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  font-size:2vw
+}
+#table_fixed thead th {
+  padding: 20px;
+  background-color:grey;
+  color: gold;
+  font-weight: 100;
+  font-size:4vw
+}
+</style>
+
+<div class="uk-container">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<table border="0" id="table_fixed">
+    <thead>
+      <tr>
+          <span><th>Sr No.</th></span>
+          <span><th>OA No.</th></span>
+          <span><th>OA Date</th></span>
+          <span><th>Customer</th></span>
+          <span><th>Delivery Date</th></span>
+
+      </tr>
+    </thead>
+</table>
+<div id="contain">
+
+
+  <table class="uk-table uk-table-divider" id="table_scroll">
+    <thead>
+
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+</div>
+</div>
+
+
+
+
+<script>
+    $(document).ready(function() {
+
+  pageScroll();
+  $("#contain").mouseover(function() {
+    clearTimeout(my_time);
+  }).mouseout(function() {
+    pageScroll();
+  });
+
+  getWidthHeader('table_fixed','table_scroll');
+
+});
+
+var my_time;
+function pageScroll() {
+	var objDiv = document.getElementById("contain");
+  objDiv.scrollTop = objDiv.scrollTop + 1;
+  if ((objDiv.scrollTop + 500) == objDiv.scrollHeight) {
+    objDiv.scrollTop = 0;
+  }
+  my_time = setTimeout('pageScroll()', 50);
+}
+
+function getWidthHeader(id_header, id_scroll) {
+  var colCount = 0;
+  $('#' + id_scroll + ' tr:nth-child(1) td').each(function () {
+    if ($(this).attr('colspan')) {
+      colCount += +$(this).attr('colspan');
+    } else {
+      colCount++;
+    }
+  });
+
+  for(var i = 1; i <= colCount; i++) {
+    var th_width = $('#' + id_scroll + ' > tbody > tr:first-child > td:nth-child(' + i + ')').width();
+    $('#' + id_header + ' > thead th:nth-child(' + i + ')').css('width',th_width + 'px');
+  }
+}
+</script>

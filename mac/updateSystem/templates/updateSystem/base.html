@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+
+    <nav class="uk-navbar-container uk-margin" uk-navbar style="background:black">
+    <div class="uk-navbar-center">
+
+        <div class="uk-navbar-center-left"><div>
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a uk-toggle="target: #offcanvas-nav" style="margin-top:3vh;color:gold">Menu</a>
+                </li>
+            </ul>
+        </div></div>
+        <a class="uk-navbar-item uk-logo" href="\"><img src="{% static 'updateSystem/ctechlogo.jpeg'%}" width="90vh"></a>
+        <div class="uk-navbar-center-right"><div>
+            <ul class="uk-navbar-nav">
+                <li><a href="#" style="margin-top:3vh;color:gold">Item</a></li>
+            </ul>
+        </div></div>
+
+    </div>
+</nav>
+
+    <!_________Sub Nav_______>
+
+
+
+
+    <!____________Off canvas___________________>
+
+
+
+
+
+<div id="offcanvas-nav" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <ul class="uk-nav uk-nav-default">
+            <li class="uk-active"><a href="#" style="color:gold">Featuring</a></li>
+            <li class="uk-parent">
+                <a href="#" style="color:gold">Info</a>
+                <ul class="uk-nav-sub">
+                    <li><a href="/ContactUs" style="color:#fff">Contact Us</a></li>
+                    <li><a href="/Achievements" style="color:#fff">Achievements</a></li>
+                    <li><a href="/CSR" style="color:#fff">Company Social Responsibility</a></li>
+                    <li><a href="#" style="color:#fff">Directors</a></li>
+                    <li><a href="#" style="color:#fff">Clients</a></li>
+                    <li><a href="/Achievements" style="color:#fff">Certificates</a></li>
+                </ul>
+            </li>
+            <li class="uk-nav-header" style="color:gold">Admin</li>
+            <li><a href="/admin" style="color:#fff"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Login</a></li>
+        </ul>
+
+    </div>
+</div>
+
+
+    {% block body %}{% endblock %}
+
+
+
+
+<style>
+    a{
+    text-decoration:none;
+    color:black;
+    font-size:2vh
+    }
+</style>
+
+
+<div class="uk-background-muted uk-padding uk-panel uk-visible@l " style="margin-top:1vh">
+            <p class="uk-h4">Ctech Engineers Pvt Ltd</p>
+    <hr class="uk-divider-icon">
+    <div class="uk-column-1-3 uk-column-divider">
+        <h4>Explore</h4>
+        <li><a href="/quickview/1">	Hardened & Ground Bushes</a></li>
+        <li><a href="/quickview/2">	Hardened & Ground Pins</a></li>
+        <li><a href="/quickview/3">	Soft Big Machined Bushes</a></li>
+        <li><a href="/quickview/4"> Machined Components	</a></li>
+        <li><a href="/quickview/5">	Small Precision Machined Components</a></li>
+        <li><a href="/quickview/6">	Sub Assemblies</a></li>
+        <li><a href="/quickview/4">	Flanges for Stamping Dies</a></li>
+        <li><a href="/quickview/7">	S. S. Discs for Uni-Directional Valves</a></li>
+        <li><a href="/quickview/9">	New Development Parts</a></li>
+        <li><a href="/quickview/1">Find Us</a></li>
+        <hr>
+        <li>Copyright © 2020 Ctech Inc. All rights reserved.</li>
+
+
+
+
+
+        <h4>Ctech Values</h4>
+        <li><a href="/CSR">	Company Social Responsibility</a></li>
+        <li><a>Environmental Policies</a></li>
+        <li><a>Supplier Responsibility</a></li>
+        <li><a>Business</a></li>
+
+
+        <h4>About Ctech</h4>
+        <li><a>Newsroom</a></li>
+        <li><a>Job Opportunities</a></li>
+        <li><a>Investors</a></li>
+        <li><a>Events</a></li>
+        <li><a href="/ContactUs/">Contact Ctech</a></li>
+        <hr>
+
+        <h4>Contacts</h4>
+        <li>Tel. No. :</li>
+        <li>+91 - 20 - 66467900</li>
+        <li>+91 - 20 - 66467902 Direct</li>
+        <li>+91 - 20 - 66467901 Direct</li>
+        <hr>
+        <img class="uk-border-pill" src="{% static 'updateSystem/ctechlogo.jpeg'%}" width="150" height="150" alt="Border circle">
+
+</div>
+    <hr>
+    <p style="text-align:center"><a>Privacy</a>           |           <a>Legal</a>            |           <a>SiteMap</a>         <img class="uk-border-circle" width="40" height="40" src="{% static 'updateSystem/ind.png'%}" style="margin-left:5vh"></p>
+        </div>
+
+<div class="uk-container uk-hidden@s" style="margin-top:5vh">
+    <h2>Ctech Engineers</h2>
+<dl class="uk-description-list uk-description-list-divider">
+    <dt><a href="#">Explore</a></dt>
+    <dt><a href="/About">About Us</a></dt>
+    <dt><a href="/ContactUs">Contact Us</a></dt>
+    <dt><a href="#">Site Map</a></dt>
+    <dt><a href="#">Legal</a></dt>
+    <dt>Copyright © 2020 Ctech Inc. All rights reserved.</dt>
+
+
+</dl>
+
+</div>
+
+    {% block js %}{% endblock %}
+
+
+    </body>
+</html>

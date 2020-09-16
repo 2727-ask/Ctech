@@ -1,0 +1,94 @@
+{% extends 'updateSystem/base.html'%}
+{% block body %}
+<div class="uk-container">
+    <h1>Contact Us</h1>
+<form class="uk-grid-small" uk-grid method="post">{% csrf_token %}
+    <div class="uk-width-1-2@s">
+        <input class="uk-input"  type="text" placeholder="First Name" name="fname">
+    </div>
+    <div class="uk-width-1-2@s">
+        <input class="uk-input" type="text" placeholder="Last Name" name="lname">
+    </div>
+    <div class="uk-width-1-1">
+        <input class="uk-input" type="text" placeholder="Email Address" name="mail">
+    </div>
+    <div class="uk-width-1-2@s">
+        <input class="uk-input" type="text" placeholder="Mobile Number" name="phone">
+    </div>
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="Company Name" name="cname">
+    </div>
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="City" name="city">
+    </div>
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="State" name="state">
+    </div>
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="Country" name="country">
+    </div>
+    <div class="uk-width-1-4@s">
+            <textarea class="uk-textarea" rows="5" placeholder="Type Your Query Here" name="enquiry"></textarea>
+        </div>
+    <div class="uk-width-1-4@s">
+         <button class="uk-button uk-button-secondary" id="sbtn" onclick="UIkit.notification({message: 'Thank You Very Much!We will contact you soon!', status: 'success'},message())">Submit</button>
+    </div>
+
+
+</form>
+</div>
+<hr class="uk-divider-icon">
+<div class="uk-container">
+<h1>How Can You Reach Us!</h1>
+<dl class="uk-description-list uk-description-list-divider">
+    <dt>Contacts</dt>
+    <dd>Tel. No. :+91 - 20 - 66467900 | 91 - 20 - 66467902 Direct | +91 - 20 - 66467901 Direct</dd>
+    <dt>Email</dt>
+    <dd>avichabuksar@gmail.com | sdmutha@gmail.com | response@gmail.com | marketing@gmail.com |</dd>
+    <dt>Company - Address : </dt>
+    <dd>Sr. No. 25, Hissa No. 5/1 & 5/2, Narhe Industrial Area, Narhe, Pune – 411 041, Maharashtra, India.</dd>
+    <dt>Social Media</dt>
+    <dd>
+        <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+<a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+<a href="" class="uk-icon-button" uk-icon="google-plus"></a>
+<a href="" class="uk-icon-button" uk-icon="linkedin"></a>
+<a href="" class="uk-icon-button" uk-icon="whatsapp"></a>
+<a href="" class="uk-icon-button" uk-icon="facebook"></a>
+<a href="" class="uk-icon-button" uk-icon="youtube"></a>
+
+</dl>
+</div>
+<hr class="uk-divider-icon">
+
+{% endblock %}
+
+
+{% block js %}
+<script>
+var a;
+a=document.getElementsByClassName("uk-input");
+b=document.getElementById('sbtn')
+
+function validateForm() {
+if (a.value == ""){
+    console.log("null")
+    console.log("done")
+    alert("Please Pass all Values")
+
+}
+}
+console.log(a.value)
+console.log(b)
+
+
+
+
+
+
+
+</script>
+
+{% endblock %}
+
+
